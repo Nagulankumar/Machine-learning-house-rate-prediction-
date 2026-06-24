@@ -1,149 +1,121 @@
-# House Price Prediction using Linear Regression
+# 🏠 House Rate Prediction
 
-## Project Overview
-
-This project predicts house prices using a **Machine Learning Linear Regression model**.
-The dataset contains information about different house features such as area, bedrooms, bathrooms, and other facilities. The model learns from the dataset and predicts the price of houses based on these features.
-
-This project demonstrates the basic steps in a **machine learning workflow**, including data preprocessing, feature scaling, model training, evaluation, and visualization.
+A Machine Learning project that predicts house prices based on features like area, bedrooms, bathrooms, location, and more — using **Linear Regression** and **Random Forest Regressor**.
 
 ---
 
-## Technologies Used
+## 📌 Project Overview
 
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
-* Scikit-learn
-
----
-
-## Dataset
-
-The dataset (`dataset.csv`) contains information about houses with features such as:
-
-* Area
-* Bedrooms
-* Bathrooms
-* Stories
-* Parking
-* Main road access
-* Guest room availability
-* Basement
-* Hot water heating
-* Air conditioning
-* Preferred area
-* Furnishing status
-* Price (Target Variable)
-
-Categorical values such as **yes/no** and **furnishing status** are converted into numerical values so that the machine learning model can process them.
+| Item | Details |
+|------|---------|
+| **Type** | Regression (Supervised Learning) |
+| **Algorithm** | Random Forest Regressor (Best), Linear Regression (Baseline) |
+| **Language** | Python 3 |
+| **Libraries** | scikit-learn, pandas, numpy, matplotlib, seaborn |
 
 ---
 
-## Project Workflow
+## 🏗️ Features Used
 
-### 1. Import Libraries
-
-Required libraries for data processing, visualization, and machine learning are imported.
-
-### 2. Load Dataset
-
-The dataset is loaded using **Pandas**.
-
-### 3. Data Preprocessing
-
-Categorical data is converted into numerical values:
-
-* yes → 1
-* no → 0
-* furnished → 1
-* semi-furnished → 2
-* unfurnished → 3
-
-### 4. Feature and Target Selection
-
-* Features (X): All columns except price
-* Target (y): Price
-
-### 5. Feature Scaling
-
-The **StandardScaler** is used to normalize feature values so that all features are on a similar scale.
-
-### 6. Train-Test Split
-
-The dataset is divided into:
-
-* 80% training data
-* 20% testing data
-
-### 7. Model Training
-
-A **Linear Regression model** is trained using the training dataset.
-
-### 8. Prediction
-
-The trained model predicts house prices for the test dataset.
-
-### 9. Model Evaluation
-
-Two evaluation metrics are used:
-
-* **R² Score** – Measures how well the model fits the data.
-* **Mean Squared Error (MSE)** – Measures the average prediction error.
-
-### 10. Data Visualization
-
-A **correlation heatmap** is created using Seaborn to visualize relationships between features.
+| Feature | Description |
+|---------|-------------|
+| `area_sqft` | Total area of the house in square feet |
+| `bedrooms` | Number of bedrooms |
+| `bathrooms` | Number of bathrooms |
+| `age_of_house` | Age of the house in years |
+| `distance_to_city_km` | Distance from city center in km |
+| `garage` | Garage availability (0 = No, 1 = Yes) |
+| `location` | Location type (Urban / Suburban / Rural) |
 
 ---
 
-## Output
-
-The program prints:
-
-* R² Score
-* Mean Squared Error
-
-It also displays a **feature correlation heatmap**.
-
----
-
-## How to Run the Project
-
-1. Clone the repository from GitHub.
-
-2. Install required libraries:
+## 📂 Project Structure
 
 ```
-pip install pandas numpy matplotlib seaborn scikit-learn
-```
-
-3. Run the Python file:
-
-```
-python model.py
+rate-prediction/
+│
+├── house_rate_prediction.py       # Main ML code
+├── house_prediction_dashboard.png # Output visualization
+├── requirements.txt               # Python dependencies
+└── README.md                      # Project documentation
 ```
 
 ---
 
-## Example Visualization
+## 🚀 How to Run
 
-The project generates a **correlation heatmap** to show relationships between house features and price.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/YOUR_USERNAME/rate-prediction.git
+cd rate-prediction
+```
+
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run the Project
+```bash
+python house_rate_prediction.py
+```
 
 ---
 
-## Future Improvements
+## 📊 Expected Output
 
-* Add more advanced models such as Random Forest
-* Improve feature engineering
-* Add model comparison
-* Deploy the model as a web application
+```
+=====================================================
+       HOUSE RATE PREDICTION PROJECT
+=====================================================
+
+📊 Dataset Overview:
+   area_sqft  bedrooms  bathrooms  ...  price
+
+MODEL EVALUATION RESULTS
+📌 Linear Regression
+   MAE  : ₹XX,XXX.XX
+   RMSE : ₹XX,XXX.XX
+   R²   : XX.XX%
+
+📌 Random Forest Regressor
+   MAE  : ₹XX,XXX.XX
+   RMSE : ₹XX,XXX.XX
+   R²   : XX.XX%
+
+PREDICT A NEW HOUSE PRICE
+💰 Predicted Price: ₹X,XX,XXX.XX
+```
 
 ---
 
-## Author
+## 📈 Dashboard Visualization
 
-**Nagulan**
-Artificial Intelligence and Machine Learning Student
+The script generates a 4-panel dashboard:
+1. **Actual vs Predicted Price** (scatter plot)
+2. **Feature Importance** (bar chart)
+3. **Price Distribution** (histogram)
+4. **Model Comparison** (R² score comparison)
+
+---
+
+## 🧠 Key Concepts
+
+- **MAE** → Average error in prediction (lower = better)
+- **RMSE** → Penalizes large errors more (lower = better)
+- **R² Score** → How well the model fits (closer to 100% = better)
+- **Random Forest** → Multiple decision trees working together for better accuracy
+
+---
+
+## 👨‍💻 Author
+
+**Nagulan**  
+AIML Engineering Student  
+Project: House Rate Prediction
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
